@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>50</y>
+      <w>320</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
+Player
+--
++ X : float
++ Y : float
++ Width : int = 50
++ Height : int = 50
++ VelX : float
++ VelY : float
++ OnGround : bool
++ Rect : RectangleF {read-only}
+--
++ Player(x: float, y: float)
++ Update(left: bool, right: bool, jump: bool) : void
++ CheckCollision(platform: Platform) : void
++ Draw(g: Graphics) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>380</y>
+      <w>320</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Model&gt;&gt;
+Platform
+--
++ X : float
++ Y : float
++ Width : int
++ Height : int
++ Rect : RectangleF {read-only}
+--
++ Platform(x: float, y: float, w: int, h: int)
++ Draw(g: Graphics) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>50</y>
+      <w>260</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;View/Controller&gt;&gt;
+Form1
+--
+- player : Player
+- platforms : List&lt;Platform&gt;
+--
+# OnPaint(e: PaintEventArgs)
+# OnKeyDown(e: KeyEventArgs)
+- gameTimer_Tick(sender: object, e: EventArgs)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>470</x>
+      <y>230</y>
+      <w>260</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Program
+--
+--
+_+ Main() : void_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>100</y>
+      <w>130</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>160</y>
+      <w>130</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..*</panel_attributes>
+    <additional_attributes>10.0;270.0;110.0;270.0;110.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>180</y>
+      <w>100</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;starts&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>180</x>
+      <y>330</y>
+      <w>90</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;checks&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
